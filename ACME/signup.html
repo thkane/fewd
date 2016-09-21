@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/acme.css">
+  <link rel="stylesheet" href="css/signup.css">
+  <meta charset="utf-8">
+  <title>ACME Corp</title>
+</head>
+<body>
+  <header>
+    <a href="index.html"><img src="./images/acme-corp.jpg" height=75px></a>
+    <nav>
+      <a href="products.html">Products</a>
+      <a href="signup.html"><button type="button">Sign Up</button></a>
+    </nav>
+  </header>
+  <main>
+    <div class="container">
+      <h1>Sign Up</h1>
+      <form action="getform.php" method="get" id="signup">
+        <div class="form-row">
+          <label for="first-name">First Name</label>
+          <input type="text" placeholder="John" />
+        </div>
+        <div class="form-row">
+          <label for="last-name">Last Name</label>
+          <input type="text" placeholder="Doe" />
+        </div>
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input type="email" placeholder="john.doe@example.com"/>
+        </div>
+        <div class="form-row">
+          <label for="password">Password</label>
+          <input type="text" />
+        </div>
+        <p>How did you hear about us?</p>
+        <select name="select" id="dropdown">
+          <option value="value1"></option>
+          <option value="value2">Friend</option>
+          <option value="value3">Search</option>
+          <option value="value4">Other</option>
+        </select><br />
+        <div class="checkbox-row">
+          <input type="checkbox" />
+          Agree to our terms of service
+        </div>
+        <a href="signup.html"><button type="submit" form="signup">Sign Up</button></a>
+      </form>
+    </div>
+  </main>
+  <footer>
+    <hr>
+    <p>Copyright, 2015</p>
+  </footer>
+</body>

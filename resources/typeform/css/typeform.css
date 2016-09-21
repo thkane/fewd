@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Avenir Next";
+}
+
+main {
+  display: flex;
+}
+
+.leftnav {
+  float:left;
+}
+
+.rightnav {
+  float: right;
+}
+
+.1strow {
+  flex: 1;
+}
+
+#information {
+  background-color: #73bec8;
+}
+
+#insight {
+  background-color: #e4ba3f;
+}
+
+#registration {
+  background-color: #cb732b;
+}

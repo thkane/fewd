@@ -1,0 +1,168 @@
+* {
+  box-sizing: border-box;
+}
+
+p {
+    display: block;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+
+body {
+  background-color: #F2F0F5;
+  margin: 0;
+}
+
+header {
+  background: linear-gradient(#00CC83,#009D5C);
+  padding: 20px;
+  font-size: 16px;
+  height: 70px;
+  font-family: "Lucida Grande";
+  color: white;
+  position: relative;
+}
+
+.button {
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background-color: #009C59;
+  border: 2px solid #007E47;
+  border-radius: 5px;
+  padding: 7px 12px;
+  text-decoration: none;
+}
+
+.button a {
+  display: inline-block;
+}
+
+.rightsidenav {
+  position: absolute;
+  right: 10px;
+  top: 25px;
+}
+
+
+header a {
+    font-size: 28px;
+    font-weight: bold;
+    font-family: "Lucida Grande";
+    color: white;
+    text-decoration: none;
+    top: 25px;
+/* should do a single div containing buttons and a?*/
+}
+
+.mainbackground {
+  background-color: white;
+  width: 800px;
+  margin: 50px auto 0px auto;
+  border-radius: 5px;
+  padding: 20px 20px 0 20px;
+  overflow: auto;
+  box-shadow: 0px 0px 5px 1px gray;
+}
+
+.fulltweet {
+  font-family: sans-serif;
+  border-top: 1px solid #CDCDCD;
+  padding: 20px 20px 20px 0;
+  position: relative;
+}
+
+.profilepic {
+  width: 70px;
+  border-radius: 5px;
+}
+
+form {
+    display: inline;
+    width: 80%;
+}
+
+textarea {
+  width: 100%;
+  height: 60px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  position: relative;
+  color: gray;
+  margin-bottom: 15px;
+}
+
+.tweetsubmit {
+  padding: 20px 20px 30px 0;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.profilepic {
+  display: inline;
+}
+
+.tweetentry, .tweettext {
+  display: inline;
+  position: absolute;
+  top: 25px;
+  margin: 0 10px;
+  width: 88%;
+  font-size: 16px;
+}
+
+
+.tweetentry p {
+  display:block;
+}
+
+.tweettext p {
+  line-height: 1.4;
+}
+
+.tweetlike {
+  font-weight: bold;
+  color: #009C59;
+  text-decoration: none;
+}
+
+.likecount {
+  color:gray;
+}
+
+::-webkit-input-placeholder {
+  text-indent: 5px;
+  font-size: 12px;
+
+}
+
+.charcount {
+  font-size: 8px;
+  position: absolute;
+  right: 2px;
+  bottom: 2px;
+}
+
+.companylinks {
+  display: flex;
+  width: 600px;
+  margin: auto;
+  font-size: 12px;
+  padding: 30px 0px;
+  font-family: "Lucida Grande";
+}
+
+.bottomlinks {
+  text-decoration: none;
+  color: gray;
+  text-align: center;
+  margin: auto;
+  margin-right: 20px;
+}
+
+.bottomlinks a {
+  text-decoration: none;
+  color: #B5B5B5;
+}

@@ -1,0 +1,52 @@
+header {
+  box-shadow: 0 0 1px black;
+  background: #c4c4c4;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid gray;
+}
+
+nav {
+  float: right;
+}
+
+body {
+  font-family: Lucida Grande;
+  margin: 0px;
+  background-image: url("../images/background.png");
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  text-shadow: 1px 1px 0px black;
+}
+
+main {
+  box-shadow: 0px 0px 5px 1px gray;
+  border-radius: 5px;
+  background: white;
+  padding: 20px;
+  max-width: 800px;
+  margin: 50px auto;
+
+}
+
+button {
+  background-color: #2A4CB2;
+  color: white;
+  font-size: 16px;
+  padding: 10px;
+  margin: 16px;
+  border-radius: 5px;
+}
+
+footer {
+  text-align: center;
+  color: grey;
+  font-size: 12px;
+  max-width: 800px;
+  margin: auto;
+  text-shadow: 0px 1px 1px;
+}

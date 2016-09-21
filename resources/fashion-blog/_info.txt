@@ -1,0 +1,30 @@
+This assignment tests your skills to recreate a web page from scratch. You'll start with just the text content and images. Your task is to first markup the content with HTML elements and then style the page using CSS. When complete it should look like the mockup. It doesn't have to be "pixel perfect"—don't stress over getting every dimension and spacing value within 1px. But try to line each section up as close to the mockup as you can.
+
+The text content (in fashion-blog.html)
+Two images (fashion-photo.jpg & fashion-photo2.jpg)
+A mockup image to use as a guide of what to build (mockup-fashion-blog.png)
+
+
+Notes on CSS:
+You're going to want to copy the reset.css file that you created in previous exercises over to this project. Make sure to include both CSS files in the of your page like this:
+<link rel="stylesheet" href="css/reset.css" />
+
+<link rel="stylesheet" href="css/fashion-blog.css" />
+
+
+Notes on the Font:
+This page uses a custom font called "Lato". The font is available from Google Fonts. You'll need to add one more stylesheet to the <head> of your page. And then also, update your CSS and set the font-family on the body element.
+
+HTML:
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:300,700,300italic,700italic" />
+
+CSS:
+body {
+    font-family: "Lato", Arial, sans-serif;
+}
+
+
+Tips:
+When we are building standalone pages like this, it’s important to use the right tag for links (the <a> tag). But you don’t need to have a valid value for the href attribute. Commonly, the hashtag # is used to just make the link valid but with no target (which just links to the top of the current page).
+<a href="#">The Catwalk</a> 
+

@@ -1,0 +1,45 @@
+.checkbox-row {
+  margin: 10px 0px;
+
+}
+
+.form-row {
+  margin-bottom: 20px;
+}
+
+input:focus {
+    border-color: #2A4CB2;
+}
+
+input, textarea, select {
+  width : 150px;
+}
+
+input {
+  padding-right: 50px;}
+
+input[type="checkbox"]{
+  width : 20px;
+}
+
+label {
+    display:inline-block;
+    width:150px;
+  }
+
+select {
+  width : 75px;
+}
+
+.container {
+  margin: 25px;
+  width: 500 px;
+}
+
+.container p {
+  margin-bottom: 0;
+}
+
+.container button {
+  margin-left: 0px;
+}

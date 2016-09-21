@@ -1,0 +1,30 @@
+main {
+  display:flex;
+}
+
+.logo {
+  text-align: center;
+  margin: 10px;
+}
+
+main h2 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.frontpage {
+  max-width: 600px;
+  margin: auto ;
+}
+
+.third {
+  padding: 15px;
+}
+
+.fourth {
+  padding: 10px;
+}
+
+.fourth h2 {
+  font-size: 16px;
+}

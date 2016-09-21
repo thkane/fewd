@@ -1,0 +1,35 @@
+.prod-image{
+  float: left;
+  margin: 20px;
+  margin-left: 0px;
+  border: 5px solid #E7E7E7;
+  border-radius: 5px;
+}
+
+.listingdetail{
+  margin: 10px;
+  margin-left: 0px;
+  padding: 5px;
+  padding-left: 0px;
+  overflow: auto;
+}
+
+.listingdetail a {
+  color: #2A5CC8;
+  text-decoration: none;
+  cursor: pointer;
+  text-shadow: none;
+}
+
+.listingdetail button {
+  margin-left: 0px;
+}
+
+.listingdetail p {
+  padding-top: 5px;
+  /*margin: 5px;*/
+}
+
+.listing hr {
+  margin-top: 20px;
+}
