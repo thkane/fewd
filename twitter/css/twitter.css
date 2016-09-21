@@ -139,10 +139,12 @@ textarea {
 }
 
 .charcount {
-  font-size: 8px;
+  font-size: 14px;
+  font-weight: bold;
   position: absolute;
-  right: 2px;
-  bottom: 2px;
+  right: 20px;
+  bottom: 40px;
+  z-index: 1;
 }
 
 .companylinks {
