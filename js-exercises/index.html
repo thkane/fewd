@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JS Exercises</title>
+    <link rel="stylesheet" href="styles.css" media="screen">
+  </head>
+  <body>
+    <h1>JS Exercises</h1>
+
+    <h2>Document Title</h2>
+
+    <label>
+      Document title:
+      <input type="text" value="wooooooo" class="document-title">
+    </label>
+
+    <h2>Full Name</h2>
+
+    <label>
+      First name:
+      <input type="text" value="John" class="first-name">
+    </label>
+
+    <label>
+      Last name:
+      <input type="text" value="Smith" class="last-name">
+    </label>
+
+    <label>
+      Full name:
+      <input type="text" value="" class="full-name">
+    </label>
+
+    <h2>Times Table</h2>
+
+    <table class="times-table">
+      <tr>
+        <th>
+          x
+        </th>
+        <th>
+          <input type="text" value="1" class="a1">
+        </th>
+        <th>
+          <input type="text" value="2" class="a2">
+        </th>
+        <th>
+          <input type="text" value="3" class="a3">
+        </th>
+        <th>
+          <input type="text" value="4" class="a4">
+        </th>
+        <th>
+          <input type="text" value="5" class="a5">
+        </th>
+      </tr>
+      <tr>
+        <th>
+          <input type="text" value="1" class="b0">
+        </th>
+        <th>
+          <input type="text" value="" class="b1">
+        </th>
+        <th>
+          <input type="text" value="" class="b2">
+        </th>
+        <th>
+          <input type="text" value="" class="b3">
+        </th>
+        <th>
+          <input type="text" value="" class="b4">
+        </th>
+        <th>
+          <input type="text" value="" class="b5">
+        </th>
+      </tr>
+      <tr>
+        <th>
+          <input type="text" value="2" class="c0">
+        </th>
+        <th>
+          <input type="text" value="" class="c1">
+        </th>
+        <th>
+          <input type="text" value="" class="c2">
+        </th>
+        <th>
+          <input type="text" value="" class="c3">
+        </th>
+        <th>
+          <input type="text" value="" class="c4">
+        </th>
+        <th>
+          <input type="text" value="" class="c5">
+        </th>
+      </tr>
+      <tr>
+        <th>
+          <input type="text" value="3" class="d0">
+        </th>
+        <th>
+          <input type="text" value="" class="d1">
+        </th>
+        <th>
+          <input type="text" value="" class="d2">
+        </th>
+        <th>
+          <input type="text" value="" class="d3">
+        </th>
+        <th>
+          <input type="text" value="" class="d4">
+        </th>
+        <th>
+          <input type="text" value="" class="d5">
+        </th>
+      </tr>
+      <tr>
+        <th>
+          <input type="text" value="4" class="e0">
+        </th>
+        <th>
+          <input type="text" value="" class="e1">
+        </th>
+        <th>
+          <input type="text" value="" class="e2">
+        </th>
+        <th>
+          <input type="text" value="" class="e3">
+        </th>
+        <th>
+          <input type="text" value="" class="e4">
+        </th>
+        <th>
+          <input type="text" value="" class="e5">
+        </th>
+      </tr>
+      <tr>
+        <th>
+          <input type="text" value="5" class="f0">
+        </th>
+        <th>
+          <input type="text" value="" class="f1">
+        </th>
+        <th>
+          <input type="text" value="" class="f2">
+        </th>
+        <th>
+          <input type="text" value="" class="f3">
+        </th>
+        <th>
+          <input type="text" value="" class="f4">
+        </th>
+        <th>
+          <input type="text" value="" class="f5">
+        </th>
+      </tr>
+    </table>
+
+<script>
+// Your code goes here!
+document.title = document.querySelector(".document-title").value;
+
+var firstName = document.querySelector(".first-name").value;
+var lastName = document.querySelector(".last-name").value;
+var fullName = firstName + " " + lastName;
+document.querySelector(".full-name").value = fullName;
+
+var r;
+for (r = 1; r < 6; r++) {
+  var cellOne = ".a" + r;
+  var firstNumber = document.querySelector(cellOne).value;
+  firstNumber = parseInt(firstNumber);
+  var cellTwo = ".b" + 0;
+  var secondNumber = document.querySelector(cellTwo).value;
+  secondNumber = parseInt(secondNumber);
+  var total = firstNumber * secondNumber;
+  var entryCell = ".b" + r;
+  document.querySelector(entryCell).value = total;
+  }
+
+for (r = 1; r < 6; r++) {
+  var cellOne = ".a" + r;
+  var firstNumber = document.querySelector(cellOne).value;
+  firstNumber = parseInt(firstNumber);
+  var cellTwo = ".c" + 0;
+  var secondNumber = document.querySelector(cellTwo).value;
+  secondNumber = parseInt(secondNumber);
+  var total = firstNumber * secondNumber;
+  var entryCell = ".c" + r;
+  document.querySelector(entryCell).value = total;
+    }
+
+for (r = 1; r < 6; r++) {
+  var cellOne = ".a" + r;
+  var firstNumber = document.querySelector(cellOne).value;
+  firstNumber = parseInt(firstNumber);
+  var cellTwo = ".d" + 0;
+  var secondNumber = document.querySelector(cellTwo).value;
+  secondNumber = parseInt(secondNumber);
+  var total = firstNumber * secondNumber;
+  var entryCell = ".d" + r;
+  document.querySelector(entryCell).value = total;
+    }
+
+for (r = 1; r < 6; r++) {
+  var cellOne = ".a" + r;
+  var firstNumber = document.querySelector(cellOne).value;
+  firstNumber = parseInt(firstNumber);
+  var cellTwo = ".e" + 0;
+  var secondNumber = document.querySelector(cellTwo).value;
+  secondNumber = parseInt(secondNumber);
+  var total = firstNumber * secondNumber;
+  var entryCell = ".e" + r;
+  document.querySelector(entryCell).value = total;
+    }
+
+for (r = 1; r < 6; r++) {
+  var cellOne = ".a" + r;
+  var firstNumber = document.querySelector(cellOne).value;
+  firstNumber = parseInt(firstNumber);
+  var cellTwo = ".f" + 0;
+  var secondNumber = document.querySelector(cellTwo).value;
+  secondNumber = parseInt(secondNumber);
+  var total = firstNumber * secondNumber;
+  var entryCell = ".f" + r;
+  document.querySelector(entryCell).value = total;
+    }
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+  </body>
+</html>

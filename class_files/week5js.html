@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Text Content</title>
+  </head>
+  <body>
+    <p>
+      Hello World!
+    </p>
+    <ul>
+      <li>Milk!</li>
+    </ul>
+    <script type="text/javascript">
+    var p = document.querySelector("p");
+    console.log(p.textContent);
+    p.textContent = "Goodbye!"
+
+    //Add an item to a list
+    // 1) Create the element
+    // 2) Append child to the parent
+    //    a) get the parent
+    //    b) append child
+
+    var newEntry = document.createElement("li");
+    newEntry.textContent = "cookies!!";
+    var parent = document.querySelector("ul");
+    parent.appendChild(newEntry);
+
+    var newImage = document.createElement("img");
+    var url = "https://media.giphy.com/media/2HONNTJbRhzKE/giphy.gif"
+    newImage.setAttribute("src", url);
+    var list = document.querySelector("li");
+    list.appendChild(newImage);
+
+    </script>
+  </body>
+</html>
