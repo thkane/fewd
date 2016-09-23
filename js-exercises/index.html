@@ -166,25 +166,23 @@ var lastName = document.querySelector(".last-name").value;
 var fullName = firstName + " " + lastName;
 document.querySelector(".full-name").value = fullName;
 
-function multiply(letter1, letter2) {
+function multiply(letter) {
   for (var r = 1; r < 6; r++) {
-    var cellOne = letter1 + r;
-    var firstNumber = document.querySelector(cellOne).value;
-    firstNumber = parseInt(firstNumber);
-    var cellTwo = letter2 + 0;
-    var secondNumber = document.querySelector(cellTwo).value;
-    secondNumber = parseInt(secondNumber);
+    var cellOne = "." + "a" + r;
+    var firstNumber = parseInt(document.querySelector(cellOne).value);
+    var cellTwo = "." + letter + 0;
+    var secondNumber = parseInt(document.querySelector(cellTwo).value);
     var total = firstNumber * secondNumber;
-    var entryCell = letter2 + r;
+    var entryCell = "." + letter + r;
     document.querySelector(entryCell).value = total;
     }
 }
 
-multiply(".a", ".b");
-multiply(".a", ".c");
-multiply(".a", ".d");
-multiply(".a", ".e");
-multiply(".a", ".f");
+multiply("b");
+multiply("c");
+multiply("d");
+multiply("e");
+multiply("f");
 
 
 
