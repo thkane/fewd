@@ -1,0 +1,12 @@
+get the content of the span
+turn it into a number
+add 1
+and put the result back in the span
+
+add event listener
+take value of box
+create new element, give it a class
+set textContent of new element to value you grabbed from the box
+
+just get the comment to appear (a la Twitter example)
+then move it INTO an event handler

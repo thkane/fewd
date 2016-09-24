@@ -36,6 +36,18 @@ header {
   text-decoration: none;
 }
 
+.tweetbutton {
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  background-color: #009C59;
+  border: 2px solid #007E47;
+  border-radius: 5px;
+  padding: 7px 12px;
+  text-decoration: none;
+}
+
+
 .button a {
   display: inline-block;
 }
@@ -143,7 +155,7 @@ textarea {
   font-weight: bold;
   position: absolute;
   right: 15px;
-  bottom: 40px;
+  bottom: 54px;
   z-index: 1;
 }
 
