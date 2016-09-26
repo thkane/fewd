@@ -32,7 +32,7 @@ function addTweet(event) {
   child1.appendChild(child2);
 
   var child3 = document.createElement("img");
-  child3.setAttribute("src", "./img/nuraika.jpg");
+  child3.setAttribute("src", "./img/tkane_fewd_twitter.jpg");
   child3.classList.add("profilepic");
   child2.appendChild(child3);
 
