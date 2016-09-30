@@ -27,6 +27,6 @@ var newComment = document.createElement("div");
 newComment.classList.add("comment");
 newComment.textContent = commentBox.value;
 commentBlock.appendChild(newComment);
-
+form.reset();
 
 }

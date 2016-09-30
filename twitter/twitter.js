@@ -2,13 +2,17 @@
 //var tweet = document.querySelector("#newtweet").value
 
 var link = document.querySelector(".tweetlike");
-var count = document.querySelector(".likecount");
+var count = document.querySelector(".likeLink");
 
 var form = document.querySelector("#tweetform");
 var tweetContent = document.querySelector("#newtweet");
 
+var charNumber = document.querySelector(".charcount");
+
+
 link.addEventListener("click", like);
 form.addEventListener("submit", addTweet);
+tweetContent.addEventListener("keyup", decCount);
 
 
 function like(event) {
@@ -23,38 +27,47 @@ function addTweet(event) {
 
   var parent = document.querySelector(".mainbackground");
 
-  var child1 = document.createElement("div");
-  child1.classList.add("fulltweet");
-  parent.appendChild(child1);
+  var fulltweetDiv = document.createElement("div");
+  fulltweetDiv.classList.add("fulltweet");
+  parent.appendChild(fulltweetDiv);
 
-  var child2 = document.createElement("div");
-  child2.classList.add("profilepic");
-  child1.appendChild(child2);
+  var profilepicDiv = document.createElement("div");
+  profilepicDiv.classList.add("profilepic");
+  fulltweetDiv.appendChild(profilepicDiv);
 
-  var child3 = document.createElement("img");
-  child3.setAttribute("src", "./img/tkane_fewd_twitter.jpg");
-  child3.classList.add("profilepic");
-  child2.appendChild(child3);
+  var profilepicImg = document.createElement("img");
+  profilepicImg.setAttribute("src", "./img/tkane_fewd_twitter.jpg");
+  profilepicImg.classList.add("profilepic");
+  profilepicDiv.appendChild(profilepicImg);
 
-  var child4 = document.createElement("div");
-  child4.classList.add("tweettext");
-  child2.appendChild(child4);
+  var tweettextDiv = document.createElement("div");
+  tweettextDiv.classList.add("tweettext");
+  profilepicDiv.appendChild(tweettextDiv);
 
-  var child5 = document.createElement("p");
-  child5.textContent = tweetContent.value;
-  child4.appendChild(child5);
+  var newTweetText = document.createElement("p");
+  newTweetText.textContent = tweetContent.value;
+  tweettextDiv.appendChild(newTweetText);
 
   var child6 = document.createElement("p");
-  child4.appendChild(child6);
+  tweettextDiv.appendChild(child6);
 
-  var child7 = document.createElement("a");
-  child7.setAttribute("href", "#");
-  child7.classList.add("tweetlike");
-  child7.textContent = "Like";
-  child6.appendChild(child7);
+  var likeLink = document.createElement("a");
+  likeLink.setAttribute("href", "#");
+  likeLink.classList.add("tweetlike");
+  likeLink.textContent = "Like";
+  child6.appendChild(likeLink);
 
-  var child8 = document.createElement("span");
-  child8.classList.add("likecount");
-  child8.textContent = " (12) ";
-  child6.appendChild(child8);
+  var likeCount = document.createElement("span");
+  likeCount.classList.add("likeLink");
+  likeCount.textContent = " (12) ";
+  child6.appendChild(likeCount);
+
+  form.reset();
+  charNumber.textContent = 140;
+}
+
+function decCount(event) {
+
+//find span and overwrite character count
+  charNumber.textContent = 140 - tweetContent.value.length;
 }
