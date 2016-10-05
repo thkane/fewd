@@ -2,7 +2,10 @@
 
 body {
   font-family: "Georgia";
-  background-color: #F3F1F5;
+  /*background-color: #F3F1F5; */
+  background-image: url("../img/rainbow.jpg");
+  color: white;
+
 }
 
 button {
@@ -13,13 +16,11 @@ button {
   font-family: "Georgia";
   font-weight: bold;
   font-size: 1.1em;
-  height: 48px;
+  height: 50px;
   position: absolute;
   right: 0px;
-
 }
 
-/* give them different positions */
 
 .todo-title {
   position: relative;
@@ -37,13 +38,11 @@ button {
   right: 0px;
 }
 
-
 main {
   width: 500px;
   margin: 50px auto 0px auto;
   position: relative;
 }
-
 
 #new-todo-body {
   width: 400px;
@@ -57,29 +56,23 @@ li {
   margin-top: 10px;
 }
 
-.new-todo {
-  position: relative;
-  display: inline-block;
-}
-
 ::-webkit-input-placeholder {
-  text-indent: 5px;
+  text-indent: 20px;
   font-family: "Georgia";
-  vertical-align: center;
 }
 
 textarea {
   border: none;
-  line-height: 1;
+  line-height: normal;
 }
 
 input:checked + span {
   text-decoration: line-through;
-  opacity: 0.2;
+  opacity: 0.7;
 }
 
 .nothing {
-  color: grey;
+  color: white;
   font-size: 30px;
   padding: 25%;
 
