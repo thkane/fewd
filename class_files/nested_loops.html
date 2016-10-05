@@ -1,0 +1,16 @@
+<ul>
+  <li>cows,horses,cats</li>
+  <li>porsche,vw,audi</li>
+  <li>homework,grocery shopping</li>
+</ul>
+
+<script>
+  var masterList = document.querySelectorAll("li");
+
+  for (var i = 0; i < masterList.length; i++) {
+    var nouns = masterList[i].textContent.split(",");
+      for (j = 0; j < nouns.length; j++ ) {
+        console.log(nouns[j]);
+      }
+  }
+  </script>

@@ -1,0 +1,68 @@
+<table>
+  <tr>
+    <td colspan="2">
+      <h1>
+        Receipt
+      </h1>
+    </td>
+  </tr>
+  <tr>
+    <td>Hamburger</td>
+    <td class="i-0 item-price">7.99</td>
+  </tr>
+  <tr>
+    <td>Fries</td>
+    <td class="i-1 item-price">3.99</td>
+  </tr>
+  <tr>
+    <td>Soda</td>
+    <td class="i-2 item-price">1.99</td>
+  </tr>
+  <tr>
+    <td>Apple Pie</td>
+    <td class="i-3 item-price">1.99</td>
+  </tr>
+  <tr>
+    <td>Milk Shake</td>
+    <td class="i-3 item-price">6.99</td>
+  </tr>
+  <tr>
+    <td>Bag</td>
+    <td class="i-4 item-price">0.10</td>
+  </tr>
+  <tr>
+    <th>
+      Total<br>
+      <button>Calculate</button>
+    </td>
+    <td class="t"></td>
+  </tr>
+</table>
+
+<script>
+
+document.querySelector("button").addEventListener("click", addIt);
+
+function addIt(event) {
+  event.preventDefault();
+  //create array of all priced items
+  var items = document.querySelectorAll(".item-price");
+  //initialize counter
+  var counter = 0;
+  //get individual amount from each entry in array
+  for (i = 0; i < items.length; i++) {
+      counter = counter + parseFloat(items[i].textContent);
+    }
+
+  document.querySelector(".t").textContent = counter.toFixed(2);
+}
+//ok we're leaving the repeats off right now
+</script>
+
+<style>
+h1 { text-align: center; margin: 0; font-size: 1.2em; }
+body { font-family: sans-serif; font-size: 20px; }
+table { margin: 0 auto; }
+th { text-align: right; }
+th, td { border: 1px solid #ccc; padding: 1em; }
+</style>

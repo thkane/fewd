@@ -1,0 +1,86 @@
+* { box-sizing: border-box; }
+
+body {
+  font-family: "Georgia";
+  background-color: #F3F1F5;
+}
+
+button {
+  background-color: #0095D3;
+  border-radius: 5px;
+  color: white;
+  padding: 7px 12px;
+  font-family: "Georgia";
+  font-weight: bold;
+  font-size: 1.1em;
+  height: 48px;
+  position: absolute;
+  right: 0px;
+
+}
+
+/* give them different positions */
+
+.todo-title {
+  position: relative;
+  font-size: 1.8em;
+  margin-bottom: 30px;
+}
+
+.leftside {
+  font-weight: bold;
+}
+
+.rightside {
+  display: inline-block;
+  position: absolute;
+  right: 0px;
+}
+
+
+main {
+  width: 500px;
+  margin: 50px auto 0px auto;
+  position: relative;
+}
+
+
+#new-todo-body {
+  width: 400px;
+  margin-right: 20px;
+  border-radius: 5px;
+  font-size: 1.2em;
+}
+
+li {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.new-todo {
+  position: relative;
+  display: inline-block;
+}
+
+::-webkit-input-placeholder {
+  text-indent: 5px;
+  font-family: "Georgia";
+  vertical-align: center;
+}
+
+textarea {
+  border: none;
+  line-height: 1;
+}
+
+input:checked + span {
+  text-decoration: line-through;
+  opacity: 0.2;
+}
+
+.nothing {
+  color: grey;
+  font-size: 30px;
+  padding: 25%;
+
+}
