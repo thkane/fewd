@@ -2,9 +2,9 @@
 
 body {
   font-family: "Georgia";
-  /*background-color: #F3F1F5; */
-  background-image: url("../img/rainbow.jpg");
-  color: white;
+  background-color: #F3F1F5;
+  /*background-image: url("../img/rainbow.jpg");*/
+  position: relative;
 
 }
 
@@ -63,12 +63,19 @@ li {
 
 input:checked + span {
   text-decoration: line-through;
-  opacity: 0.7;
+  opacity: 0.2;
 }
 
 .nothing {
-  color: white;
+  color: grey;
   font-size: 30px;
   padding: 25%;
+}
 
+.secret{
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  font-size: 10px;
+  padding: 1px;
 }

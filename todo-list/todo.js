@@ -35,3 +35,10 @@ function addToDo(event) {
   form.reset();
 
 }
+
+var showImage = document.querySelector(".secret");
+form.addEventListener("click", secret);
+
+function secret(event) {
+  
+}
