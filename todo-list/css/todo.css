@@ -16,7 +16,6 @@ button {
   font-family: "Georgia";
   font-weight: bold;
   font-size: 1.1em;
-  height: 50px;
   position: absolute;
   right: 0px;
 }
@@ -48,7 +47,8 @@ main {
   width: 400px;
   margin-right: 20px;
   border-radius: 5px;
-  font-size: 1.2em;
+  font-size: 1.1em;
+  padding: 5px;
 }
 
 li {
@@ -57,13 +57,8 @@ li {
 }
 
 ::-webkit-input-placeholder {
-  text-indent: 20px;
+  text-indent: 5px;
   font-family: "Georgia";
-}
-
-textarea {
-  border: none;
-  line-height: normal;
 }
 
 input:checked + span {

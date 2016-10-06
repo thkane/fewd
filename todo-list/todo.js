@@ -1,13 +1,9 @@
-//what do we want to do here...
-//taking input from textarea and adding it to list
-//so let's get the input from the textarea
 var todoEntry = document.querySelector("#new-todo-body");
 var form = document.querySelector("#new-todo");
 var toDoHolder = document.querySelector("main");
 var toDoNumber = document.querySelector(".todo-number");
 
 form.addEventListener("submit", addToDo);
-
 
 function addToDo(event) {
   event.preventDefault();
@@ -31,9 +27,6 @@ function addToDo(event) {
     toDoNumber.textContent = count + 1;
 
   }
-
-
-  //add new todo
 
   //hide default text
   var nothing = document.querySelector(".nothing");
