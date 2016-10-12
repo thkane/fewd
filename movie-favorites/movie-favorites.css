@@ -1,0 +1,21 @@
+.posters {
+  display:flex;
+}
+
+.fourth img {
+  width: 200px;
+}
+
+.fourth {
+  padding: 10px;
+}
+
+body {
+  background-color: #393939;
+  color: white;
+  text-align: left;
+}
+
+th {
+  padding-right: 10px;
+}
