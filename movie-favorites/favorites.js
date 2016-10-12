@@ -21,7 +21,7 @@ function getMovie(event) {
   var clickedMovie = event.target;
   var imdbID = clickedMovie.id;
   console.log(imdbID);
-  var url = "http://omdbapi.com/?i=" + imdbID;
+  var url = "https://omdbapi.com/?i=" + imdbID;
 
   $.get(url, displayResults);
 
