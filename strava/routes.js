@@ -11,11 +11,11 @@ function findSegment(event) {
     var latitude_start  = position.coords.latitude;
     var longitude_start = position.coords.longitude;
 
-    var latitude_end = latitude_start + (area * 0.01455445222);
-    var longitude_end = longitude_end + (area * 0.01455445222);
-
     var area = parseInt(document.querySelector("#area").value);
     var max_cat = parseInt(document.querySelector("#climb").value);
+
+    var latitude_end = latitude_start + (area * 0.01455445222);
+    var longitude_end = longitude_end + (area * 0.01455445222);
 
     var output = document.querySelector("#out");
     output.innerHTML = '<div class="data">Latitude is <span id="lat1">' + latitude_start + '</span>°<br>Longitude is <span id="long1">' + longitude_start + '</span>°</div>';
@@ -28,6 +28,8 @@ function findSegment(event) {
 
     function listSegments(results) {
       var segments = results.segments;
+      console.log(segments);
+      console.log(segments[0].end_latlng[0]);
       var parent = document.querySelector(".segmentbox");
 
       for (var i = 0; i < segments.length; i++) {
