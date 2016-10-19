@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div id="routeName"></div>
+    <!-- <div class="map">
+      <iframe width="300" height="225" frameborder="0" style="border:0"
+      src="https://www.google.com/maps/embed/v1/place?q=37.57%20-122&key=AIzaSyD6HK7ifr3rbmnhx51eToJTNRr2Y3XsROY" allowfullscreen></iframe>
+    </div> -->
+    <script>
+
+
+
+    $.get('https://crossorigin.me/https://www.strava.com/api/v3/segments/explore?access_token=c95ed5932a9cddcb6595abaaccf6ddb099ea49ff&bounds=37.821362,-122.505373,37.842038,-122.465977', displayResults)
+    var theName = document.querySelector("#routeName");
+
+    function displayResults(results) {
+        console.log(results);
+        // theName.textContent = results.start_latlng;
+        // var coordinates = results.start_latlng;
+        // var latitude = coordinates[0];
+        // var longitude = coordinates[1];
+        var segmentLength = results.segments.length;
+        var apiKey = "AIzaSyD6HK7ifr3rbmnhx51eToJTNRr2Y3XsROY";
+        // var url = "https://www.google.com/maps/embed/v1/place?q=" + coordinates[0] + "%20" + coordinates[1] + "&key=" + apiKey
+        // console.log(url);
+        console.log(segmentLength);
+    }
+
+
+
+    </script>
+   </body>
+ </html>

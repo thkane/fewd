@@ -16,7 +16,6 @@ third.addEventListener("click", getMovie);
 fourth.addEventListener("click", getMovie);
 
 
-// One event handler to rule them all...
 function getMovie(event) {
   var clickedMovie = event.target;
   var imdbID = clickedMovie.id;

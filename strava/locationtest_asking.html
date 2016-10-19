@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <p><button onclick="geoFindMe()">What's my location?</button></p>
+    <div id="out"></div>
+    <script>
+
+  function geoFindMe() {
+    var output = document.querySelector("#out");
+
+  function success(position) {
+    var latitude  = position.coords.latitude;
+    var longitude = position.coords.longitude;
+
+    output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
+
+    $.get('https://crossorigin.me/https://www.strava.com/api/v3/segments/explore?access_token=c95ed5932a9cddcb6595abaaccf6ddb099ea49ff&bounds=37.821362,-122.505373,37.842038,-122.465977', displayResults)
+
+
+
+  };
+
+  navigator.geolocation.getCurrentPosition(success);
+}
+
+
+     </script>
+   </body>
+ </html>
