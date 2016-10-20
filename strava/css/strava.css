@@ -1,0 +1,64 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  line-height: 1.5em;
+}
+
+.top_graphic {
+  background-image: url('../img/scc2.jpg');
+  width: 100%;
+  height: 300px;
+  opacity: 0.3;
+  position: relative;
+}
+
+.title {
+  font-size: 3em;
+  color: black;
+  position: absolute;
+  top:10px;
+  left:10px;
+  z-index: 2;
+}
+
+.user_question {
+  padding-top: 20px;
+  margin: 20px auto 0px auto;
+  width: 800px;
+}
+
+.form-row, #out {
+  padding: 10px;
+}
+
+#go {
+  border-radius: 5px;
+  background-color: white;
+  padding: 7px 12px;
+  font-weight: bold;
+  margin: 20px auto 0px auto;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.stravaresults {
+  padding-top: 20px;
+  margin: 20px auto 0px auto;
+  width: 800px;
+}
+
+.segment {
+  padding: 5px;
+  margin: 10px;
+  border-top: 1px solid grey;
+  display: flex;
+
+}
+
+.segmentdata {
+  width: 500px;
+  flex-grow: 2;
+}
+
+.map {
+}

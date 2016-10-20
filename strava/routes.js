@@ -28,17 +28,15 @@ function findSegment(event) {
 
     function listSegments(results) {
       var segments = results.segments;
-      console.log(segments);
-      console.log(segments[0].end_latlng[0]);
-      var parent = document.querySelector(".segmentbox");
+      var parent = document.querySelector(".stravaresults");
 
       for (var i = 0; i < segments.length; i++) {
         var newSegment = document.createElement("div");
-        newSegment.classList.add(".segment");
+        newSegment.classList.add("segment");
         parent.appendChild(newSegment);
-        newSegment.innerHTML = '<li>Segment name: '  + segments[i].name + '</li><li>Climb rating: ' + segments[i].climb_category + '</li><li>Distance: ' + segments[i].distance/1000 + ' km</li><div class="map"><iframe width="300" height="225" frameborder="0" style="border:0" src=' + maps_url + segments[i].start_latlng[0] + "%20" +  segments[i].start_latlng[1] + "&key=" + apiKey + ' allowfullscreen></iframe></div>';
-
+        newSegment.innerHTML = '<div class="segmentdata"><p>Segment name: <a href="https://www.strava.com/segments/'  + segments[i].id + '" target="_blank">' + segments[i].name + '</a></p><p>Climb rating: ' + segments[i].climb_category + '</p><p>Distance: ' + segments[i].distance/1000 + ' km</p></div><div class="map"><iframe width="300" height="225" frameborder="0" style="border:0" src=' + maps_url + segments[i].start_latlng[0] + "%20" +  segments[i].start_latlng[1] + "&key=" + apiKey + ' allowfullscreen></iframe></div>';
       }
+
     }
 
   }
