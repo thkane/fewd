@@ -6,7 +6,7 @@ body {
 }
 
 .top_graphic {
-  background-image: url('../img/tenerife3.png');
+  background-image: url('../img/tenerife_opaque.png');
   width: 100%;
   height: 620px;
   position: relative;
@@ -17,8 +17,11 @@ body {
   font-size: 3em;
   color: white;
   position: absolute;
-  top:20px;
-  left:20px;
+  top:50px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-shadow: 1px 1px 1px #000;
+
 }
 
 .user_question {
@@ -28,6 +31,7 @@ body {
   background-color: white;
   position:absolute;
   font-weight: 500;
+  width: 40%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -48,7 +52,7 @@ body {
 }
 
 .stravaresults {
-  padding-top: 20px;
+  padding-top: 10px;
   margin: 20px auto 0px auto;
   width: 700px;
   background-color: white;
@@ -57,16 +61,17 @@ body {
 }
 
 .segment {
-  padding: 5px;
+  padding: 10px;
   margin: 10px;
   border-top: 1px solid grey;
   display: flex;
-
+  font-weight: 500;
 }
 
 .segmentdata {
   width: 500px;
   flex-grow: 2;
+
 }
 
 .field {
@@ -78,4 +83,45 @@ body {
 #findme {
   margin-left: 10px;
   font-size: 0.8em;
+}
+
+.resulttotal {
+  font-weight: 500;
+  font-size: 1.5em;
+  padding: 10px 15px 5px;
+}
+
+.geoask {
+  color: gray;
+}
+
+/* Start by setting display:none to make this hidden.
+   Then we position it in relation to the viewport window
+   with position:fixed. Width, height, top and left speak
+   for themselves. Background we set to 80% white with
+   our animation centered, and no-repeating */
+.modal {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 255, 255, 255, .8 )
+                url('../img/ajax-loader.gif')
+                50% 50%
+                no-repeat;
+}
+
+/* When the body has the loading class, we turn
+   the scrollbar off with overflow:hidden */
+body.loading {
+    overflow: hidden;
+}
+
+/* Anytime the body has the loading class, our
+   modal element will be visible */
+body.loading .modal {
+    display: block;
 }

@@ -1,0 +1,23 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+</head>
+<body>
+</body>
+<script>
+var maps_url = "https://maps.googleapis.com/maps/api/geocode/json?";
+var apiKey = "AIzaSyDmqqsWbwD5-3iahKJ39g_yr9et3Ml70mc";
+var city = "Foster City";
+var state = "CA";
+
+var full_url = maps_url + "address=" + city + "," + state + "&key=" + apiKey;
+
+$.get(full_url, displayResults);
+
+function displayResults(results) {
+  console.log(results);
+}
+
+</script>
+</html>

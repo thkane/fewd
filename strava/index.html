@@ -21,7 +21,7 @@
           <label>Longitude? (any number between 180 and -180)</label>
           <input type="text" class="field" id="long" placeholder=" -85">
         </div>
-        <div class="form-row">Or, let's find where you are right now?<button type="button" id="findme">Find me!</button></div>
+        <div class="form-row"><span class="geoask">Or, let's find where you are right now?</span><button type="button" id="findme">Find me!</button></div>
         <div class="form-row">
           <label>How large an area should I search?</label>
           <input type="text" class="field" id="area" placeholder="in miles">
@@ -34,8 +34,9 @@
       </form>
     </div>
   </div>
+<div class="modal"><!-- Place at bottom of page --></div>
+  <!-- <div class="stravaresults"></div> -->
 
-  <div class="stravaresults"></div>
 </body>
 <script src="routes.js"></script>
 </html>
