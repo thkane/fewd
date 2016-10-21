@@ -28,6 +28,10 @@ function findSegment(event) {
     var latitude_start  = parseInt(document.querySelector("#lat").value);
     var longitude_start = parseInt(document.querySelector("#long").value);
 
+    // if (latitude_start < -180 || latitude_start > 180) {
+    //   alert("Please enter a number between -180 and 180");
+    // }
+
     var area = parseInt(document.querySelector("#area").value);
     var max_cat = parseInt(document.querySelector("#climb").value);
 
@@ -49,7 +53,7 @@ function findSegment(event) {
         var newSegment = document.createElement("div");
         newSegment.classList.add("segment");
         parent.appendChild(newSegment);
-        newSegment.innerHTML = '<div class="segmentdata"><p>Segment name: <a href="https://www.strava.com/segments/'  + segments[i].id + '" target="_blank">' + segments[i].name + '</a></p><p>Climb rating: ' + segments[i].climb_category + '</p><p>Distance: ' + segments[i].distance/1000 + ' km</p></div><div class="map"><iframe width="300" height="225" frameborder="0" style="border:0" src=' + maps_url + segments[i].start_latlng[0] + "%20" +  segments[i].start_latlng[1] + "&key=" + apiKey + ' allowfullscreen></iframe></div>';
+        newSegment.innerHTML = '<div class="segmentdata"><p>Segment name: <a href="https://www.strava.com/segments/'  + segments[i].id + '" target="_blank">' + segments[i].name + '</a></p><p>Climb rating: ' + segments[i].climb_category + '</p><p>Distance: ' + (segments[i].distance/1000).toFixed(1) + ' km</p></div><div class="map"><iframe width="300" height="225" frameborder="0" style="border:0" src=' + maps_url + segments[i].start_latlng[0] + "%20" +  segments[i].start_latlng[1] + "&key=" + apiKey + ' allowfullscreen></iframe></div>';
       }
 
     }
