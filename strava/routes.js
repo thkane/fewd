@@ -36,13 +36,14 @@ function findSegment(event) {
 
     var strava_url = "https://crossorigin.me/https://www.strava.com/api/v3/segments/explore?access_token=c95ed5932a9cddcb6595abaaccf6ddb099ea49ff&bounds=" + latitude_start + "," + longitude_start + "," + latitude_end + "," + longitude_end + "&max_cat=" + max_cat;
     $.get(strava_url, listSegments);
+    console.log(strava_url);
     var maps_url = "https://www.google.com/maps/embed/v1/place?q=";
     var apiKey = "AIzaSyDmqqsWbwD5-3iahKJ39g_yr9et3Ml70mc";
 
     function listSegments(results) {
       var segments = results.segments;
       var parent = document.querySelector(".stravaresults");
-      parent.style.display = "block";
+      // parent.style.display = "block";
 
       for (var i = 0; i < segments.length; i++) {
         var newSegment = document.createElement("div");
