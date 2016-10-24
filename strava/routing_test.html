@@ -6,18 +6,30 @@
 <body>
 </body>
 <script>
-var maps_url = "https://maps.googleapis.com/maps/api/geocode/json?";
+var geocode_url = "https://maps.googleapis.com/maps/api/geocode/json?";
 var apiKey = "AIzaSyDmqqsWbwD5-3iahKJ39g_yr9et3Ml70mc";
 var city = "Foster City";
 var state = "CA";
 
-var full_url = maps_url + "address=" + city + "," + state + "&key=" + apiKey;
+var full_url = geocode_url + "address=" + city + "," + state + "&key=" + apiKey;
+
+var latitude_start = 0;
+var longitude_start = 0;
+
 
 $.get(full_url, displayResults);
 
-function displayResults(results) {
-  console.log(results);
-}
+
+function displayResults(googapi) {
+
+    latitude_start = googapi.results[0].geometry.location.lat;
+    longitude_start = googapi.results[0].geometry.location.long;
+    return (latitude_start, longitude_start);
+  }
+
+debugger
+
+
 
 </script>
 </html>

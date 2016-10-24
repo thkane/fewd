@@ -16,37 +16,47 @@ $(document).on({
 
 function geoFind(event) {
 
-  navigator.geolocation.getCurrentPosition(storeCoord);
+  // navigator.geolocation.getCurrentPosition(storeCoord);
 
-  function storeCoord(position) {
-    var latitude_start  = position.coords.latitude;
-    var longitude_start = position.coords.longitude;
-    document.querySelector("#lat").value = latitude_start;
-    document.querySelector("#long").value = longitude_start;
+//   function storeCoord(position) {
+//     var latitude_start  = position.coords.latitude;
+//     var longitude_start = position.coords.longitude;
+//     document.querySelector("#geotell_lat").value = latitude_start;
+//     document.querySelector("#geotell_long").value = longitude_start;
+//   }
+
+  var city  = document.querySelector("#user_city").value;
+  var state = document.querySelector("#user_state").value;
+
+
+  var geocode_url = "https://maps.googleapis.com/maps/api/geocode/json?";
+  var full_url = geocode_url + "address=" + city + "," + state + "&key=" + apiKey;
+
+  $.get(full_url, getCoordinates);
+
+  function getCoordinates(googapi) {
+    var latitude_start = googapi.results[0].geometry.location.lat;
+    var longitude_start = googapi.results[0].geometry.location.lng;
+    document.querySelector("#geotell_lat").textContent = latitude_start + "°";
+    document.querySelector("#geotell_long").textContent = longitude_start + "°";
+    document.querySelector("#confirm").style.display = "block";
+
   }
 }
-
 
 
 function findSegment(event) {
   event.preventDefault();
 
-  // var city  = parseInt(document.querySelector("#city").value);
-  // var state = parseInt(document.querySelector("#state").value);
 
-  // var geocode_url = "https://maps.googleapis.com/maps/api/geocode/json?";
-  // var full_url = geocode_url + "address=" + city + "," + state + "&key=" + apiKey;
-  //
-  // $.get(full_url, getCoordinates);
+  // if (city == "" || state = "") {
+  //   latitude_start = document.querySelector("#geotell_lat").value;
+  //   longitude_start = document.querySelector("#geotell_long").value;
 
-  // function getCoordinates(googapi) {
-  //   var latitude_start = googapi.results[0].geometry.location.lat;
-  //   var longitude_start = googapi.results[0].geometry.location.long;
-  //   return [latitude_start, longitude_start];
   // }
 
-    var latitude_start  = parseInt(document.querySelector("#lat").value);
-    var longitude_start = parseInt(document.querySelector("#long").value);
+   var latitude_start = parseInt(document.querySelector("#geotell_lat").textContent);
+   var longitude_start = parseInt(document.querySelector("#geotell_long").textContent);
 
     var area = parseInt(document.querySelector("#area").value);
     var max_cat = parseInt(document.querySelector("#climb").value);
@@ -61,6 +71,7 @@ function findSegment(event) {
 //maybe i just need to nest a bunch of functions?
     function listSegments(results) {
       var segments = results.segments;
+      debugger
       var parent = document.querySelector("body");
       var stravaresults = document.createElement("div");
       stravaresults.classList.add("stravaresults");

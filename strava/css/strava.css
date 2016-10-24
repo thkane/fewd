@@ -95,6 +95,15 @@ body {
   color: gray;
 }
 
+#geotell_lat, #geotell_long {
+  font-style: italic;
+}
+
+#confirm {
+  display: none;
+  font-weight: 300;
+}
+
 /* Start by setting display:none to make this hidden.
    Then we position it in relation to the viewport window
    with position:fixed. Width, height, top and left speak
