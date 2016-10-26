@@ -40,29 +40,22 @@ body {
 
 .top_form {
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .leftside {
-  width: 45.25%;
+  flex: 4;
 }
 
 .middle {
-  padding-top: 50px;
-  padding-bottom: 50px;
+  flex: 1;
   font-size: 1.8em;
 }
 
 .rightside {
-  width: 45.25%;
+  flex: 4;
   position: relative;
-}
-
-#rightbutton {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
 }
 
 .bottom_form {
@@ -73,15 +66,22 @@ body {
   padding: 10px;
 }
 
-#go {
+button {
   border-radius: 5px;
   background-color: #7DBCCC;
   padding: 7px 12px;
   font-weight: bold;
-  margin: 20px auto 0px auto;
+  /*margin: 20px auto 0px auto;*/
   border: 1px solid black;
   cursor: pointer;
+
+
+}
+
+#go {
   display: none;
+  width: 35%;
+  margin: auto;
 }
 
 #stravaresults {
@@ -115,13 +115,13 @@ body {
   padding: 5px;
 }
 
-#findme, #findmylocation {
-  margin-left: 10px;
-  font-size: 0.8em;
+#findmylocation {
+  margin-left: 20px;
 }
 
-.geolocate {
-  margin: auto;
+#findme {
+  /*margin-left: 10px;*/
+
 }
 
 .resulttotal {
@@ -130,9 +130,9 @@ body {
   padding: 10px 15px 5px;
 }
 
-.geoask {
+/*.geoask {
   font-weight: 300;
-}
+}*/
 
 #geotell_lat, #geotell_long {
   font-style: italic;
@@ -141,10 +141,15 @@ body {
 #confirm {
   display: none;
   font-weight: 300;
+  padding-top: 25px;
 }
 
 #area_q, #climb_q {
   display: none;
+}
+
+#climb_q {
+  padding-bottom: 20px;
 }
 
 #credit {
@@ -153,4 +158,35 @@ body {
   padding-top: 10px;
   padding-bottom: 10px;
 
+}
+
+/* Start by setting display:none to make this hidden.
+   Then we position it in relation to the viewport window
+   with position:fixed. Width, height, top and left speak
+   for themselves. Background we set to 80% white with
+   our animation centered, and no-repeating */
+.modal {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 255, 255, 255, .8 )
+                url('http://i.stack.imgur.com/FhHRx.gif')
+                50% 50%
+                no-repeat;
+}
+
+/* When the body has the loading class, we turn
+   the scrollbar off with overflow:hidden */
+body.loading {
+    overflow: hidden;
+}
+
+/* Anytime the body has the loading class, our
+   modal element will be visible */
+body.loading .modal {
+    display: block;
 }

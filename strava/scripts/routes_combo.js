@@ -9,6 +9,13 @@ findUser.addEventListener("click", geoFindUser);
 
 var apiKey = "AIzaSyDmqqsWbwD5-3iahKJ39g_yr9et3Ml70mc";
 
+// $body = $("body");
+//
+// $(document).on({
+//     ajaxStart: function() { $body.addClass("loading");    },
+//      ajaxStop: function() { $body.removeClass("loading"); }
+// });
+
 function geoFindUser(event) {
 
   navigator.geolocation.getCurrentPosition(storeCoord);
@@ -23,7 +30,6 @@ function geoFindUser(event) {
 }
 
 function geoFind(event) {
-
 
   var city  = document.querySelector("#user_city").value;
   var state = document.querySelector("#user_state").value;
@@ -50,7 +56,7 @@ function fillLatLong(lat,long) {
   document.querySelector("#area_q").style.display = "block";
   document.querySelector("#climb_q").style.display = "block";
   document.querySelector("#go").style.display = "inline";
-  document.querySelector(".bottom_form").style.borderTop = "1px solid black"; 
+  document.querySelector(".bottom_form").style.borderTop = "1px solid black";
 
 }
 
@@ -95,7 +101,6 @@ function findSegment(event) {
         + segments[i].id + '" target="_blank">' + segments[i].name + '</a></p><p>Climb rating: '
         + segments[i].climb_category + '</p><p>Distance: ' + (segments[i].distance * 0.000621371).toFixed(1)
         + ' miles</p></div><div class="map"><iframe width="300" height="225" frameborder="0" style="border:0" src='
-
         + maps_url + '&origin=' + segments[i].start_latlng[0] + ','+ segments[i].start_latlng[1] + '&destination=' +  segments[i].end_latlng[0] + ',' + segments[i].end_latlng[1] + '&mode=bicycling allowfullscreen></iframe></div>';
       }
 
