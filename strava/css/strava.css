@@ -3,6 +3,7 @@ body {
   font-weight: 300;
   line-height: 1.5em;
   background-color: #95C8CB;
+  position: relative;
 }
 
 .top_graphic {
@@ -109,6 +110,14 @@ body {
 
 #area_q, #climb_q {
   display: none;
+}
+
+#credit {
+  text-align: center;
+  font-size: 0.8em;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
 }
 
 /*#spinBox {

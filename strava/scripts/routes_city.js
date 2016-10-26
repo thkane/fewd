@@ -84,14 +84,14 @@ function findSegment(event) {
 
     var strava_url = "https://crossorigin.me/https://www.strava.com/api/v3/segments/explore?access_token=c95ed5932a9cddcb6595abaaccf6ddb099ea49ff&bounds=" + latitude_start + "," + longitude_start + "," + latitude_end + "," + longitude_end + "&max_cat=" + max_cat;
     $.get(strava_url, listSegments);
-    var maps_url = "https://www.google.com/maps/embed/v1/place?q=";
+    var maps_url = "https://www.google.com/maps/embed/v1/directions?key=" + apiKey;
 //maybe i just need to nest a bunch of functions?
     function listSegments(results) {
       var segments = results.segments;
-      var parent = document.querySelector("body");
+      // var parent = document.querySelector("body");
       var stravaresults = document.createElement("div");
       stravaresults.id = "stravaresults";
-      parent.appendChild(stravaresults);
+      $(stravaresults).insertBefore( "#credit" );
       stravaresults.innerHTML = '<div class="resulttotal">We found ' + segments.length + ' segments for you to check out!</div>'
 
       for (var i = 0; i < segments.length; i++) {
@@ -101,10 +101,10 @@ function findSegment(event) {
         parent.appendChild(newSegment);
         newSegment.innerHTML = '<div class="segmentdata"><p>Segment name: <a href="https://www.strava.com/segments/'
         + segments[i].id + '" target="_blank">' + segments[i].name + '</a></p><p>Climb rating: '
-        + segments[i].climb_category + '</p><p>Distance: ' + (segments[i].distance/1000).toFixed(1)
-        + ' km</p></div><div class="map"><iframe width="300" height="225" frameborder="0" style="border:0" src='
-        + maps_url + segments[i].start_latlng[0] + "%20" +  segments[i].start_latlng[1] + "&key=" + apiKey
-        + ' allowfullscreen></iframe></div>';
+        + segments[i].climb_category + '</p><p>Distance: ' + (segments[i].distance * 0.000621371).toFixed(1)
+        + ' miles</p></div><div class="map"><iframe width="300" height="225" frameborder="0" style="border:0" src='
+
+        + maps_url + '&origin=' + segments[i].start_latlng[0] + ','+ segments[i].start_latlng[1] + '&destination=' +  segments[i].end_latlng[0] + ',' + segments[i].end_latlng[1] + '&mode=bicycling allowfullscreen></iframe></div>';
       }
 
     }
