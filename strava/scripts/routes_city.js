@@ -7,27 +7,37 @@ findMe.addEventListener("click", geoFind);
 
 var apiKey = "AIzaSyDmqqsWbwD5-3iahKJ39g_yr9et3Ml70mc";
 
-$body = $("body");
+// removing for new solution
+// $body = $("body");
+//
+// $(document).on({
+//   ajaxStart: function() { $body.addClass("loading");    },
+//   ajaxStop: function() { $body.removeClass("loading"); }
+// });
 
-$(document).on({
-  ajaxStart: function() { $body.addClass("loading");    },
-  ajaxStop: function() { $body.removeClass("loading"); }
-});
+// $('#go').click(function(){
+//     $('#stravaresults').html("Loading in 3 seconds...");
+//     $('#spinBox').show().spin();
+//     $.ajax({
+//     method: 'POST',
+//     url: '/echo/html/',
+//     data: {
+//       html: 'Data received!',
+//       delay: 3
+//     },
+//     success: function(data) {
+//       $('#stravaresults').html(data);
+//       $('#spinBox').hide().spin(false);
+//     }
+//   });
+// });
 
 function geoFind(event) {
 
   // navigator.geolocation.getCurrentPosition(storeCoord);
 
-//   function storeCoord(position) {
-//     var latitude_start  = position.coords.latitude;
-//     var longitude_start = position.coords.longitude;
-//     document.querySelector("#geotell_lat").value = latitude_start;
-//     document.querySelector("#geotell_long").value = longitude_start;
-//   }
-
   var city  = document.querySelector("#user_city").value;
   var state = document.querySelector("#user_state").value;
-
 
   var geocode_url = "https://maps.googleapis.com/maps/api/geocode/json?";
   var full_url = geocode_url + "address=" + city + "," + state + "&key=" + apiKey;
@@ -40,9 +50,16 @@ function geoFind(event) {
     document.querySelector("#geotell_lat").textContent = latitude_start + "°";
     document.querySelector("#geotell_long").textContent = longitude_start + "°";
     document.querySelector("#confirm").style.display = "block";
+    document.querySelector("#area_q").style.display = "block";
+    document.querySelector("#climb_q").style.display = "block";
+    document.querySelector("#go").style.display = "inline";
 
   }
+
+
+
 }
+
 
 
 function findSegment(event) {
@@ -71,18 +88,16 @@ function findSegment(event) {
 //maybe i just need to nest a bunch of functions?
     function listSegments(results) {
       var segments = results.segments;
-      debugger
       var parent = document.querySelector("body");
       var stravaresults = document.createElement("div");
-      stravaresults.classList.add("stravaresults");
+      stravaresults.id = "stravaresults";
       parent.appendChild(stravaresults);
       stravaresults.innerHTML = '<div class="resulttotal">We found ' + segments.length + ' segments for you to check out!</div>'
-      console.log(results);
 
       for (var i = 0; i < segments.length; i++) {
         var newSegment = document.createElement("div");
         newSegment.classList.add("segment");
-        var parent = document.querySelector(".stravaresults");
+        var parent = document.querySelector("#stravaresults");
         parent.appendChild(newSegment);
         newSegment.innerHTML = '<div class="segmentdata"><p>Segment name: <a href="https://www.strava.com/segments/'
         + segments[i].id + '" target="_blank">' + segments[i].name + '</a></p><p>Climb rating: '

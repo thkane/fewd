@@ -14,25 +14,18 @@
     <div class="user_question">
       <form id="signup">
         <div class="form-row">
-          <label>City?</label>
-          <input type="text" class="field" id="user_city" placeholder="">
-          <!-- <label>Latitude? (any number between 180 and -180)</label>
-          <input type="text" class="field" id="lat" placeholder="38"> -->
+          <!-- <label>City?</label>
+          <input type="text" class="field" id="city" placeholder=""> -->
+          <label>Latitude? (any number between 180 and -180)</label>
+          <input type="text" class="field" id="lat" placeholder="38">
         </div>
         <div class="form-row">
-          <label>State?</label>
-          <input type="text" class="field" id="user_state" placeholder="">
-          <!-- <label>Longitude? (any number between 180 and -180)</label>
-          <input type="text" class="field" id="long" placeholder=" -85"> -->
+          <!-- <label>State?</label>
+          <input type="text" class="field" id="state" placeholder=""> -->
+          <label>Longitude? (any number between 180 and -180)</label>
+          <input type="text" class="field" id="long" placeholder=" -85">
         </div>
-        <div class="form-row"><span class="geoask">Let's find that location:</span><button type="button" id="findme">Find me!</button>
-        </div>
-        <div class="form-row" id="confirm">Here's where I'm gonna search:
-          <br>
-          Latitude: <span id="geotell_lat"></span>
-          <br>
-          Longitude: <span id="geotell_long"></span>
-        </div>
+        <div class="form-row"><span class="geoask">Or, let's find where you are right now?</span><button type="button" id="findme">Find me!</button></div>
         <div class="form-row">
           <label>How large an area should I search?</label>
           <input type="text" class="field" id="area" placeholder="in miles">
@@ -49,5 +42,5 @@
   <!-- <div class="stravaresults"></div> -->
 
 </body>
-<script src="routes_city.js"></script>
+<script src="routes.js"></script>
 </html>

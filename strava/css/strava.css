@@ -49,15 +49,18 @@ body {
   margin: 20px auto 0px auto;
   border: 1px solid black;
   cursor: pointer;
+  display: none;
 }
 
-.stravaresults {
+#stravaresults {
   padding-top: 10px;
   margin: 20px auto 0px auto;
   width: 700px;
   background-color: white;
   /*display: none;*/
   border-radius: 10px;
+  margin-top: 1em;
+
 }
 
 .segment {
@@ -92,7 +95,7 @@ body {
 }
 
 .geoask {
-  color: gray;
+  font-weight: 300;
 }
 
 #geotell_lat, #geotell_long {
@@ -104,12 +107,31 @@ body {
   font-weight: 300;
 }
 
+#area_q, #climb_q {
+  display: none;
+}
+
+/*#spinBox {
+    z-index:999;
+    opacity:0.8;
+    display:none;
+    border-radius:0.25em;
+    width:5em;
+    height:5em;
+    margin: -2.5em 0 0 -2.5em;
+    background-color:#f0f3f6;
+    border:1px solid #cdcdcd;
+    position:fixed;
+    top:50%;
+    left:50%
+}*/
+
 /* Start by setting display:none to make this hidden.
    Then we position it in relation to the viewport window
    with position:fixed. Width, height, top and left speak
    for themselves. Background we set to 80% white with
    our animation centered, and no-repeating */
-.modal {
+/*.modal {
     display:    none;
     position:   fixed;
     z-index:    1000;
@@ -121,16 +143,16 @@ body {
                 url('../img/ajax-loader.gif')
                 50% 50%
                 no-repeat;
-}
+}*/
 
 /* When the body has the loading class, we turn
    the scrollbar off with overflow:hidden */
-body.loading {
+/*body.loading {
     overflow: hidden;
-}
+}*/
 
 /* Anytime the body has the loading class, our
    modal element will be visible */
-body.loading .modal {
+/*body.loading .modal {
     display: block;
-}
+}*/

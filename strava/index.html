@@ -4,33 +4,42 @@
     <meta charset="utf-8">
     <title></title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/strava.css">
 
   </head>
 <body>
   <div class="top_graphic">
-    <div class="title">Segmentfindr 1.0</div>
+    <div class="title">SGMNTfindr 1.0</div>
     <div class="user_question">
       <form id="signup">
         <div class="form-row">
-          <!-- <label>City?</label>
-          <input type="text" class="field" id="city" placeholder=""> -->
-          <label>Latitude? (any number between 180 and -180)</label>
-          <input type="text" class="field" id="lat" placeholder="38">
+          <label>City?</label>
+          <input type="text" class="field" id="user_city" placeholder="">
+          <!-- <label>Latitude? (any number between 180 and -180)</label>
+          <input type="text" class="field" id="lat" placeholder="38"> -->
         </div>
         <div class="form-row">
-          <!-- <label>State?</label>
-          <input type="text" class="field" id="state" placeholder=""> -->
-          <label>Longitude? (any number between 180 and -180)</label>
-          <input type="text" class="field" id="long" placeholder=" -85">
+          <label>State?</label>
+          <input type="text" class="field" id="user_state" placeholder="">
+          <!-- <label>Longitude? (any number between 180 and -180)</label>
+          <input type="text" class="field" id="long" placeholder=" -85"> -->
         </div>
-        <div class="form-row"><span class="geoask">Or, let's find where you are right now?</span><button type="button" id="findme">Find me!</button></div>
-        <div class="form-row">
+        <div class="form-row"><span class="geoask">Let's find that location:</span><button type="button" id="findme">Find me!</button>
+        </div>
+        <div class="form-row" id="confirm">Here are the coordinates you've entered:
+          <br>
+          Latitude: <span id="geotell_lat"></span>
+          <br>
+          Longitude: <span id="geotell_long"></span>
+        </div>
+        <div class="form-row" id="area_q">
           <label>How large an area should I search?</label>
           <input type="text" class="field" id="area" placeholder="in miles">
         </div>
-        <div class="form-row">
+        <div class="form-row" id="climb_q">
           <label>On a scale of 1 to 5, what's the hardest climb you want?</label>
           <input type="text" class="field" id="climb" placeholder="2">
         </div>
@@ -38,9 +47,12 @@
       </form>
     </div>
   </div>
-<div class="modal"><!-- Place at bottom of page --></div>
+<div id="spinBox"><!-- Place at bottom of page --></div>
   <!-- <div class="stravaresults"></div> -->
 
 </body>
-<script src="routes.js"></script>
+<script src="scripts/routes_city.js"></script>
+<!-- <script src="jquery.spin.js"></script>
+<script src="spin.js"></script> -->
+
 </html>
