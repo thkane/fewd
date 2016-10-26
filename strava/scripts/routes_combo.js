@@ -1,15 +1,29 @@
 
 var generateSegment = document.querySelector("#go");
 var findLocation = document.querySelector("#findme");
+var findUser = document.querySelector("#findmylocation");
 
 generateSegment.addEventListener("click", findSegment);
 findLocation.addEventListener("click", geoFind);
+findUser.addEventListener("click", geoFindUser);
 
 var apiKey = "AIzaSyDmqqsWbwD5-3iahKJ39g_yr9et3Ml70mc";
 
+function geoFindUser(event) {
+
+  navigator.geolocation.getCurrentPosition(storeCoord);
+
+
+  function storeCoord(position) {
+    var latitude_start  = position.coords.latitude;
+    var longitude_start = position.coords.longitude;
+    fillLatLong(latitude_start,longitude_start);
+  }
+
+}
+
 function geoFind(event) {
 
-  // navigator.geolocation.getCurrentPosition(storeCoord);
 
   var city  = document.querySelector("#user_city").value;
   var state = document.querySelector("#user_state").value;
@@ -22,19 +36,23 @@ function geoFind(event) {
   function getCoordinates(googapi) {
     var latitude_start = googapi.results[0].geometry.location.lat;
     var longitude_start = googapi.results[0].geometry.location.lng;
-    document.querySelector("#geotell_lat").textContent = latitude_start + "°";
-    document.querySelector("#geotell_long").textContent = longitude_start + "°";
-    document.querySelector("#confirm").style.display = "block";
-    document.querySelector("#area_q").style.display = "block";
-    document.querySelector("#climb_q").style.display = "block";
-    document.querySelector("#go").style.display = "inline";
-
+    fillLatLong(latitude_start,longitude_start);
   }
 
 
 
 }
 
+function fillLatLong(lat,long) {
+  document.querySelector("#geotell_lat").textContent = lat + "°";
+  document.querySelector("#geotell_long").textContent = long + "°";
+  document.querySelector("#confirm").style.display = "block";
+  document.querySelector("#area_q").style.display = "block";
+  document.querySelector("#climb_q").style.display = "block";
+  document.querySelector("#go").style.display = "inline";
+  document.querySelector(".bottom_form").style.borderTop = "1px solid black"; 
+
+}
 
 
 function findSegment(event) {

@@ -38,6 +38,37 @@ body {
   transform: translate(-50%, -50%);
 }
 
+.top_form {
+  display: flex;
+}
+
+.leftside {
+  width: 45.25%;
+}
+
+.middle {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  font-size: 1.8em;
+}
+
+.rightside {
+  width: 45.25%;
+  position: relative;
+}
+
+#rightbutton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+.bottom_form {
+  margin-top: 10px;
+}
+
 .form-row, #out {
   padding: 10px;
 }
@@ -84,9 +115,13 @@ body {
   padding: 5px;
 }
 
-#findme {
+#findme, #findmylocation {
   margin-left: 10px;
   font-size: 0.8em;
+}
+
+.geolocate {
+  margin: auto;
 }
 
 .resulttotal {

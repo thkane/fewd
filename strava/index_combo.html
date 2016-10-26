@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/strava_combo.css">
+
+  </head>
+<body>
+  <div class="top_graphic">
+    <div class="title">SGMNTfndr 1.0</div>
+    <div class="user_question">
+      <div class="top_form">
+        <div class="leftside">
+          <div class="form-row">
+            <form id="enteraddress">
+              <label>City?</label>
+              <input type="text" class="field" id="user_city" placeholder="">
+            </div>
+            <div class="form-row">
+              <label>State?</label>
+              <input type="text" class="field" id="user_state" placeholder="">
+            </div>
+            <div class="form-row"><span class="geoask">Let's find that location first:</span><button type="button" id="findme">Find it!</button>
+            </div>
+        </div>
+        <div class="middle">
+          OR
+        </div>
+        <div class="rightside">
+          <div class="form-row" id="rightbutton"><button type="button" id="findmylocation">Detect my location!</button>
+          </div>
+        </div>
+    </div>
+      <div class="bottom_form">
+        <div class="form-row" id="confirm">Here are the coordinates you've provided:
+          <br>
+          Latitude: <span id="geotell_lat"></span>
+          <br>
+          Longitude: <span id="geotell_long"></span>
+        </div>
+        <div class="form-row" id="area_q">
+          <label>How large an area should I search?</label>
+          <input type="text" class="field" id="area" placeholder="in miles">
+        </div>
+        <div class="form-row" id="climb_q">
+          <label>On a scale of 1 to 5, what's the hardest climb you want?</label>
+          <input type="text" class="field" id="climb" placeholder="2">
+        </div>
+        <button type="submit" id="go">Find some segments!</button></a>
+      </div>
+      </form>
+    </div>
+  </div>
+<div id="spinBox"><!-- Place at bottom of page --></div>
+  <!-- <div class="stravaresults"></div> -->
+<div id="credit">Made by Tim K, 2016</div>
+</body>
+<script src="scripts/routes_combo.js"></script>
+<!-- <script src="jquery.spin.js"></script>
+<script src="spin.js"></script> -->
+
+</html>
