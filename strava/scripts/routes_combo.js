@@ -45,9 +45,6 @@ function geoFind(event) {
     var longitude_start = googapi.results[0].geometry.location.lng;
     fillLatLong(latitude_start,longitude_start);
   }
-
-
-
 }
 
 function fillLatLong(lat,long) {
@@ -58,19 +55,11 @@ function fillLatLong(lat,long) {
   document.querySelector("#climb_q").style.display = "block";
   document.querySelector("#go").style.display = "inline";
   document.querySelector(".bottom_form").style.borderTop = "1px solid black";
-
 }
 
 
 function findSegment(event) {
   event.preventDefault();
-
-
-  // if (city == "" || state = "") {
-  //   latitude_start = document.querySelector("#geotell_lat").value;
-  //   longitude_start = document.querySelector("#geotell_long").value;
-
-  // }
 
    var latitude_start = parseInt(document.querySelector("#geotell_lat").textContent);
    var longitude_start = parseInt(document.querySelector("#geotell_long").textContent);
@@ -78,8 +67,15 @@ function findSegment(event) {
     var area = parseInt(document.querySelector("#area").value);
     var max_cat = parseInt(document.querySelector("#climb").value);
 
-    var latitude_end = latitude_start + (area * 0.01455445222);
-    var longitude_end = longitude_start + (area * 0.01455445222);
+    // creating a bounding box using starting point and size of area; not circle
+
+    //define end point as + 1/2 area in both directions, converting miles to degrees
+    var latitude_end = latitude_start + (area * 0.01455445222)/2;
+    var longitude_end = longitude_start + (area * 0.01455445222)/2;
+
+    //define start point as - 1/2 area in both directions, converting miles to degrees
+    latitude_start = latitude_start - (area * 0.01455445222)/2;
+    longitude_start = longitude_start - (area * 0.01455445222)/2;
 
     var maps_url = "https://www.google.com/maps/embed/v1/directions?key=" + apiKey;
 
@@ -102,7 +98,8 @@ function findSegment(event) {
         + segments[i].id + '" target="_blank">' + segments[i].name + '</a></p><p>Climb rating: '
         + segments[i].climb_category + '</p><p>Distance: ' + (segments[i].distance * 0.000621371).toFixed(1)
         + ' miles</p></div><div class="map"><iframe width="300" height="225" frameborder="0" style="border:0" src='
-        + maps_url + '&origin=' + segments[i].start_latlng[0] + ','+ segments[i].start_latlng[1] + '&destination=' +  segments[i].end_latlng[0] + ',' + segments[i].end_latlng[1] + '&mode=bicycling allowfullscreen></iframe></div>';
+        + maps_url + '&origin=' + segments[i].start_latlng[0] + ','+ segments[i].start_latlng[1] + '&destination='
+        +  segments[i].end_latlng[0] + ',' + segments[i].end_latlng[1] + '&mode=bicycling allowfullscreen></iframe></div>';
       }
 
     }
