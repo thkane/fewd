@@ -7,17 +7,18 @@ generateSegment.addEventListener("click", findSegment);
 findLocation.addEventListener("click", geoFind);
 findUser.addEventListener("click", geoFindUser);
 
+
 var apiKey = "AIzaSyDmqqsWbwD5-3iahKJ39g_yr9et3Ml70mc";
 
-// $body = $("body");
-//
-// $(document).on({
-//     ajaxStart: function() { $body.addClass("loading");    },
-//      ajaxStop: function() { $body.removeClass("loading"); }
-// });
+$body = $("body");
+
+$(document).on({
+    ajaxStart: function() { $body.addClass("loading");    },
+     ajaxStop: function() { $body.removeClass("loading"); }
+});
 
 function geoFindUser(event) {
-
+  $body.addClass("loading");
   navigator.geolocation.getCurrentPosition(storeCoord);
 
 
@@ -26,7 +27,7 @@ function geoFindUser(event) {
     var longitude_start = position.coords.longitude;
     fillLatLong(latitude_start,longitude_start);
   }
-
+  $body.removeClass("loading");
 }
 
 function geoFind(event) {

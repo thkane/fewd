@@ -7,38 +7,29 @@
 
 
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/strava_combo.css">
+    <link rel="stylesheet" href="css/strava.css">
 
   </head>
 <body>
   <div class="top_graphic">
-    <div class="title">SGMNTfndr 1.0</div>
+    <div class="title">SGMNTfindr 1.0</div>
     <div class="user_question">
-      <div class="top_form">
-        <div class="leftside">
-          <div class="form-row">
-            <form id="enteraddress">
-              <label>City?</label>
-              <input type="text" class="field" id="user_city" placeholder="">
-            </div>
-            <div class="form-row">
-              <label>State?</label>
-              <input type="text" class="field" id="user_state" placeholder="">
-            </div>
-            <div class="form-row">
-              <button type="button" id="findme">Get the coordinates!</button>
-            </div>
+      <form id="signup">
+        <div class="form-row">
+          <label>City?</label>
+          <input type="text" class="field" id="user_city" placeholder="">
+          <!-- <label>Latitude? (any number between 180 and -180)</label>
+          <input type="text" class="field" id="lat" placeholder="38"> -->
         </div>
-        <div class="middle">
-          OR
+        <div class="form-row">
+          <label>State?</label>
+          <input type="text" class="field" id="user_state" placeholder="">
+          <!-- <label>Longitude? (any number between 180 and -180)</label>
+          <input type="text" class="field" id="long" placeholder=" -85"> -->
         </div>
-        <div class="rightside">
-          <div class="form-row" id="rightbutton"><button type="button" id="findmylocation">Detect my location!</button>
-          </div>
+        <div class="form-row"><span class="geoask">Let's find that location first:</span><button type="button" id="findme">Find me!</button>
         </div>
-    </div>
-      <div class="bottom_form">
-        <div class="form-row" id="confirm">Here are the coordinates you've provided:
+        <div class="form-row" id="confirm">Here are the coordinates you've entered:
           <br>
           Latitude: <span id="geotell_lat"></span>
           <br>
@@ -53,14 +44,14 @@
           <input type="text" class="field" id="climb" placeholder="2">
         </div>
         <button type="submit" id="go">Find some segments!</button></a>
-      </div>
       </form>
     </div>
   </div>
-<div class="modal"><!-- Place at bottom of page --></div>
+<div id="spinBox"><!-- Place at bottom of page --></div>
+  <!-- <div class="stravaresults"></div> -->
 <div id="credit">Made by Tim K, 2016</div>
 </body>
-<script src="scripts/routes_combo.js"></script>
+<script src="scripts/routes_city.js"></script>
 <!-- <script src="jquery.spin.js"></script>
 <script src="spin.js"></script> -->
 
