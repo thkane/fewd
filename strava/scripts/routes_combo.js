@@ -101,6 +101,7 @@ function findSegment(event) {
         + maps_url + '&origin=' + segments[i].start_latlng[0] + ','+ segments[i].start_latlng[1] + '&destination='
         +  segments[i].end_latlng[0] + ',' + segments[i].end_latlng[1] + '&mode=bicycling allowfullscreen></iframe></div>';
       }
+      debugger
 
     }
 

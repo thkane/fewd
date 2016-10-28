@@ -6,14 +6,6 @@ body {
   position: relative;
 }
 
-a {
-  color:white;
-  text-decoration: none;
-  }      /* unvisited link */
-a:visited {color:white;}  /* visited link */
-a:hover {color:white;}  /* mouse over link */
-a:active {color:white;}  /* selected link */
-
 
 
 .top_graphic {
