@@ -99,7 +99,7 @@ function findSegment(event) {
         + segments[i].climb_category + '</p><p>Distance: ' + (segments[i].distance * 0.000621371).toFixed(1)
         + ' miles</p></div><div class="map"><iframe width="300" height="225" frameborder="0" style="border:0" src='
         + maps_url + '&origin=' + segments[i].start_latlng[0] + ','+ segments[i].start_latlng[1] + '&destination='
-        +  segments[i].end_latlng[0] + ',' + segments[i].end_latlng[1] + '&mode=bicycling allowfullscreen></iframe></div>';
+        +  segments[i].end_latlng[0] + ',' + segments[i].end_latlng[1] + '&mode=bicycling&maptype=satellite allowfullscreen></iframe></div>';
       }
 
     }
