@@ -6,6 +6,16 @@ body {
   position: relative;
 }
 
+a {
+  color:white;
+  text-decoration: none;
+  }      /* unvisited link */
+a:visited {color:white;}  /* visited link */
+a:hover {color:white;}  /* mouse over link */
+a:active {color:white;}  /* selected link */
+
+
+
 .top_graphic {
   background-image: url('../img/tenerife_opaque.png');
   width: 100%;
@@ -116,7 +126,7 @@ button {
 }
 
 #findmylocation {
-  margin-left: 20px;
+  margin-left: 40px;
 }
 
 #findme {
